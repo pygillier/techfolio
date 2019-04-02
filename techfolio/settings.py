@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'stackoverflow.apps.StackoverflowConfig',
+    'projects.apps.ProjectsConfig',
+
+    'constance',
+    'constance.backends.database',
 ]
 
 MIDDLEWARE = [
@@ -77,11 +81,28 @@ WSGI_APPLICATION = 'techfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'techfolio',
+        'USER': 'techfolio_usr',
+        'PASSWORD': 'techfolio_pwd',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
+# Constance
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+
+CONSTANCE_CONFIG = {
+    'GITHUB_TOKEN': ('', 'GitHub token for repositories retrieval'),
+    'GITHUB_ONLY_USER': (True, "Don't retrieve orgs related repositories"),
+    'GITLAB_TOKEN': ('', 'GitLab token for repositories retrieval'),
+}
+
+CONSTANCE_CONFIG_FIELDSETS = {
+    'GitHub': ('GITHUB_TOKEN','GITHUB_ONLY_USER'),
+    'GitLab': ('GITLAB_TOKEN',),
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
