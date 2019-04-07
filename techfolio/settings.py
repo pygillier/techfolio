@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'stackoverflow.apps.StackoverflowConfig',
     'projects.apps.ProjectsConfig',
 
+    # External apps
     'constance',
     'constance.backends.database',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +147,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "staticfiles"),
 ]
+
+# Django Sass
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'staticfiles')

@@ -1,9 +1,26 @@
 {% extends 'base.html' %}
 {% block title %}Projects{% endblock %}
 {% block content %}
-    <ul>
-    {% for project in object_list %}
-        <li>{{ project }}</li>
-    {% endfor %}
-    </ul>
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Projects
+                </h1>
+                <h2 class="subtitle">
+                    Code(s) at various states. <abbr title="you mileage may vary">ymmv</abbr>.
+                </h2>
+            </div>
+        </div>
+    </section>
+    <div class="tile is-ancestor">
+        <div class="tile is-4 is-parent">
+            {% for project in projects_list %}
+        <div class="tile is-child box">
+            <p class="title">{{ project.name }}</p>
+            <p>{{ project.description }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock content %}

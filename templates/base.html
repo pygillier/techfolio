@@ -1,12 +1,35 @@
 {% load static %}
+{% load sass_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% sass_src 'app.scss' %}" rel="stylesheet" type="text/css" />
 </head>
-<body class="uk-background">
-{% block content %}Content should go there{% endblock content %}
+<body>
+
+<section class="columns">
+    <div class="column is-one-quarter">
+        <header class="has-text-centered">
+            <h1 class="title">Pierre-Yves Gillier</h1>
+        <h2 class="subtitle">Portfolio</h2>
+        </header>
+
+        <aside class="menu">
+            <ul class="menu-list">
+                <li><a href="{% url 'projects:index' %}">Projects</a></li>
+                <li><a>Readings</a></li>
+                <li><a>Elsewhere</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <div class="column">
+        {% block content %}Content should go there{% endblock content %}
+    </div>
+</section>
 </body>
 </html>

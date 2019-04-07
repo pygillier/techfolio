@@ -6,12 +6,16 @@ name = "pypi"
 [dev-packages]
 
 [packages]
-django = "*"
+django = "==2.2"
 stackapi = "*"
 django-constance = "*"
 "github3.py" = "*"
 django-choice-object = "*"
 python-gitlab = "*"
+libsass = "*"
+django-sass-processor = "*"
+django-compressor = "*"
+rjsmin = "*"
 
 [requires]
 python_version = "3.6"
