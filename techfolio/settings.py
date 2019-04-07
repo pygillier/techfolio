@@ -97,11 +97,12 @@ CONSTANCE_CONFIG = {
     'GITHUB_TOKEN': ('', 'GitHub token for repositories retrieval'),
     'GITHUB_ONLY_USER': (True, "Don't retrieve orgs related repositories"),
     'GITLAB_TOKEN': ('', 'GitLab token for repositories retrieval'),
+    'GITLAB_ENDPOINT': ('https://gitlab.com', 'Gitlab instance address'),
 }
 
 CONSTANCE_CONFIG_FIELDSETS = {
-    'GitHub': ('GITHUB_TOKEN','GITHUB_ONLY_USER'),
-    'GitLab': ('GITLAB_TOKEN',),
+    'GitHub': ('GITHUB_TOKEN', 'GITHUB_ONLY_USER'),
+    'GitLab': ('GITLAB_TOKEN', 'GITLAB_ENDPOINT'),
 }
 
 # Password validation
@@ -141,3 +142,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "staticfiles"),
+]

@@ -9,6 +9,9 @@ name = "pypi"
 django = "*"
 stackapi = "*"
 django-constance = "*"
+"github3.py" = "*"
+django-choice-object = "*"
+python-gitlab = "*"
 
 [requires]
 python_version = "3.6"
