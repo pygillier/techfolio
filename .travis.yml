@@ -4,4 +4,4 @@ python:
 install:
   - 'pip install pipenv'
   - 'pipenv install'
-script: 'python -m pytest --cov=pyblizzard tests --cov-report=xml'
+script: 'flake8'
