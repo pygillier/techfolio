@@ -6,4 +6,11 @@
 $body-background-color: #282828;
 $body-color: #999999;
 */
+
+/* Font awesome */
+$fa-font-path: "./webfonts";
+
 @import "bulma-0.7.4/bulma";
+@import "./fa/fontawesome.scss";
+@import "./fa/solid.scss";
+@import "./fa/brands.scss";

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load projects_extras %}
 {% block title %}Projects{% endblock %}
 {% block content %}
     <section class="hero is-primary is-bold">
@@ -14,13 +15,12 @@
         </div>
     </section>
     <div class="tile is-ancestor">
-        <div class="tile is-4 is-parent">
             {% for project in projects_list %}
-        <div class="tile is-child box">
+        <div class="tile is-3 box">
             <p class="title">{{ project.name }}</p>
+            <a href="{{ project.url }}">{{ project.platform|platform_icon }}/{{ project.repo_id }}</a>
             <p>{{ project.description }}</p>
         </div>
         {% endfor %}
-    </div>
 </div>
 {% endblock content %}
