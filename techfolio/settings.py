@@ -25,6 +25,10 @@ SECRET_KEY = '0y%euo)-6v95f$@kmdjpn6_1qv(9!=(1vphtt(avn)qng6oy1%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+INTERNAL_IPS = [
+    '127.0.0.1'
+]
+
 ALLOWED_HOSTS = []
 
 
@@ -37,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home.apps.HomeConfig',
     'stackoverflow.apps.StackoverflowConfig',
     'projects.apps.ProjectsConfig',
 
@@ -44,6 +49,8 @@ INSTALLED_APPS = [
     'constance',
     'constance.backends.database',
     'sass_processor',
+
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'techfolio.urls'
@@ -100,11 +108,13 @@ CONSTANCE_CONFIG = {
     'GITHUB_ONLY_USER': (True, "Don't retrieve orgs related repositories"),
     'GITLAB_TOKEN': ('', 'GitLab token for repositories retrieval'),
     'GITLAB_ENDPOINT': ('https://gitlab.com', 'Gitlab instance address'),
+    'DEBUG': (False, "Debug mode"),
 }
 
 CONSTANCE_CONFIG_FIELDSETS = {
     'GitHub': ('GITHUB_TOKEN', 'GITHUB_ONLY_USER'),
     'GitLab': ('GITLAB_TOKEN', 'GITLAB_ENDPOINT'),
+    'Misc': ('DEBUG',),
 }
 
 # Password validation
@@ -129,9 +139,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-FR'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
 

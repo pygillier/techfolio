@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Me contacter{% endblock %}
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+    {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+    {% endfor %}
+    {{ form.non_field_errors }}
+    <div class="field">
+        <label for="{{ form.from_name.id_for_label }}" class="label">Your name</label>
+        <div class="control">
+            {{ form.from_name }}
+        </div>
+    </div>
+    <div class="field">
+        <label for="{{ form.from_email.id_for_label }}" class="label">Your email address</label>
+        <div class="control">
+            {{ form.from_email }}
+        </div>
+    </div>
+    <div class="field">
+        <label for="{{ form.subject.id_for_label }}" class="label">Subject</label>
+        <div class="control">
+            {{ form.subject }}
+        </div>
+    </div>
+    <div class="field">
+        <label for="{{ form.content.id_for_label }}" class="label">Subject</label>
+        <div class="control">
+            {{ form.content }}
+        </div>
+    </div>
+    <input type="submit"/>
+</form>
+{% endblock content %}

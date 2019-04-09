@@ -11,7 +11,7 @@
 <body>
 
 <section class="columns">
-    <div class="column is-one-quarter">
+    <div class="column is-one-quarter section">
         <header class="has-text-centered">
             <h1 class="title">Pierre-Yves Gillier</h1>
         <h2 class="subtitle">Portfolio</h2>
@@ -19,15 +19,15 @@
 
         <aside class="menu">
             <ul class="menu-list">
-                <li><a href="{% url 'projects:index' %}">Projects</a></li>
-                <li><a>Readings</a></li>
-                <li><a>Elsewhere</a></li>
-                <li><a>Contact</a></li>
+                <li><a href="{% url 'projects:index' %}"><i class="far fa-folder-open"></i> Projects</a></li>
+                <li><a href="#"><i class="far fa-newspaper"></i> Readings</a></li>
+                <li><a href="#"><i class="far fa-bookmark"></i> Elsewhere</a></li>
+                <li><a href="{% url 'home:contact' %}"><i class="far fa-envelope"></i> Contact</a></li>
             </ul>
         </aside>
     </div>
 
-    <div class="column">
+    <div class="column section">
         {% block content %}Content should go there{% endblock content %}
     </div>
 </section>
