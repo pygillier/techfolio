@@ -18,6 +18,8 @@ libsass = "*"
 django-sass-processor = "*"
 django-compressor = "*"
 rjsmin = "*"
+django-crispy-forms = "*"
+sparkpost = "*"
 
 [requires]
 python_version = "3.6"

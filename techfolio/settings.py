@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'constance',
     'constance.backends.database',
     'sass_processor',
+    'crispy_forms',
 
     'debug_toolbar',
 ]
@@ -109,12 +110,15 @@ CONSTANCE_CONFIG = {
     'GITLAB_TOKEN': ('', 'GitLab token for repositories retrieval'),
     'GITLAB_ENDPOINT': ('https://gitlab.com', 'Gitlab instance address'),
     'DEBUG': (False, "Debug mode"),
+    'EMAIL_DEFAULT_FROM': ('default@example.com', 'Default sender'),
+    'EMAIL_DEFAULT_DEST': ('default@example.com', 'Default recipient'),
 }
 
 CONSTANCE_CONFIG_FIELDSETS = {
     'GitHub': ('GITHUB_TOKEN', 'GITHUB_ONLY_USER'),
     'GitLab': ('GITLAB_TOKEN', 'GITLAB_ENDPOINT'),
-    'Misc': ('DEBUG',),
+    'Mailings': ('EMAIL_DEFAULT_FROM', 'EMAIL_DEFAULT_DEST'),
+    'Misc': ('DEBUG', ),
 }
 
 # Password validation
@@ -160,3 +164,7 @@ STATICFILES_DIRS = [
 
 # Django Sass
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+# Email
+SPARKPOST_API_KEY = os.environ['SPARKPOST_API_KEY']
+EMAIL_BACKEND = 'sparkpost.django.email_backend.SparkPostEmailBackend'

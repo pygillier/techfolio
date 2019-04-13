@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block title %}Me contacter{% endblock %}
 {% block content %}
 <form method="POST">
@@ -33,4 +34,5 @@
     </div>
     <input type="submit"/>
 </form>
+    <form>{{ form|crispy }}</form>
 {% endblock content %}
