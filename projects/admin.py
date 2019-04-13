@@ -13,6 +13,7 @@ def unpublish(modeladmin, request, queryset):
 publish.short_description = "Publish selected projects"
 unpublish.short_description = "Unpublish selected projects"
 
+
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
 

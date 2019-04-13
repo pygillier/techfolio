@@ -14,12 +14,35 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Contact',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('from_name', models.CharField(max_length=255, verbose_name='Sender name')),
-                ('from_email', models.EmailField(max_length=254, verbose_name='Sender address')),
-                ('subject', models.CharField(max_length=255, verbose_name='Subject')),
+                ('id', models.AutoField(
+                    auto_created=True,
+                    primary_key=True,
+                    serialize=False,
+                    verbose_name='ID'
+                )),
+                ('from_name', models.CharField(
+                    max_length=255,
+                    verbose_name='Sender name'
+                )),
+                ('from_email', models.EmailField(
+                    max_length=254,
+                    verbose_name='Sender address'
+                )),
+                ('subject', models.CharField(
+                    max_length=255,
+                    verbose_name='Subject'
+                )),
                 ('content', models.TextField(verbose_name='Message')),
-                ('status', models.IntegerField(choices=[(1, 'Received'), (2, 'Replied'), (3, 'Waiting for anwser'), (4, 'Closed')], default=1, verbose_name='Status')),
+                ('status', models.IntegerField(
+                    choices=[
+                        (1, 'Received'),
+                        (2, 'Replied'),
+                        (3, 'Waiting for anwser'),
+                        (4, 'Closed')
+                    ],
+                    default=1,
+                    verbose_name='Status'
+                )),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
             ],

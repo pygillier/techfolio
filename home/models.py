@@ -17,8 +17,8 @@ class Contact(models.Model):
     content = models.TextField("Message", blank=False, null=False)
 
     status = models.IntegerField('Status',
-                                   choices=ContactStatus,
-                                   default=ContactStatus.RECEIVED)
+                                 choices=ContactStatus,
+                                 default=ContactStatus.RECEIVED)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

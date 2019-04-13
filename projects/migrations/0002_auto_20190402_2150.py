@@ -13,12 +13,24 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='project',
             name='platform',
-            field=models.IntegerField(choices=[(1, 'GitHub'), (2, 'GitLab'), (10, 'Unknown')], default=10, verbose_name='Platform'),
+            field=models.IntegerField(
+                choices=[
+                    (1, 'GitHub'),
+                    (2, 'GitLab'),
+                    (10, 'Unknown')
+                ],
+                default=10,
+                verbose_name='Platform'
+            ),
         ),
         migrations.AddField(
             model_name='project',
             name='repo_id',
-            field=models.CharField(default=10, max_length=255, verbose_name='Project ID'),
+            field=models.CharField(
+                default=10,
+                max_length=255,
+                verbose_name='Project ID'
+            ),
             preserve_default=False,
         ),
     ]

@@ -13,7 +13,7 @@ def my_handler(sender, instance, **kwargs):
         return
 
     send_mail(
-        subject=f'Nouveau contact: {instance.subject}',
+        subject="Nouvelle prise de contact: {}".format(instance.subject),
         message=instance.content,
         from_email=config.EMAIL_DEFAULT_FROM,
         recipient_list=[config.EMAIL_DEFAULT_DEST],

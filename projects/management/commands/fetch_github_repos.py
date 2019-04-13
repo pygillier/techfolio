@@ -7,7 +7,6 @@ from projects.models import Project, PlatformChoice
 class Command(BaseCommand):
     help = 'Fetch repositories from github'
 
-
     def handle(self, *args, **options):
         self.stdout.write("Fetching GitHub repositories")
 

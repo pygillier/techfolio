@@ -13,6 +13,10 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='project',
             name='parent_url',
-            field=models.URLField(blank=True, null=True, verbose_name='When fork, parents URL'),
+            field=models.URLField(
+                blank=True,
+                null=True,
+                verbose_name='When fork, parents URL'
+            ),
         ),
     ]

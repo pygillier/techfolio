@@ -5,6 +5,7 @@ from ..models import PlatformChoice
 
 register = template.Library()
 
+
 @register.filter(name='platform_icon', is_safe=True)
 def get_platform_icon(platform_id):
     if platform_id == PlatformChoice.GITHUB:

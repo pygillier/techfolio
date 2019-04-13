@@ -70,8 +70,7 @@ ROOT_URLCONF = 'techfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,16 +125,16 @@ CONSTANCE_CONFIG_FIELDSETS = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa
     },
 ]
 
@@ -163,7 +162,7 @@ STATICFILES_DIRS = [
 ]
 
 # Django Sass
-SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'staticfiles')
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Email
 SPARKPOST_API_KEY = os.environ['SPARKPOST_API_KEY']
