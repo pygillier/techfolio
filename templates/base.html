@@ -9,7 +9,12 @@
     <link href="{% sass_src 'app.scss' %}" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
+<section class="section">
+    <div class="container">
+        {% include "_navbar.html" %}
+    </div>
+</section>
+{% comment %}
 <section class="columns">
     <div class="column is-one-quarter section">
         <header class="has-text-centered">
@@ -31,5 +36,6 @@
         {% block content %}Content should go there{% endblock content %}
     </div>
 </section>
+{% endcomment %}
 </body>
 </html>
