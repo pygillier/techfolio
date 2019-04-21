@@ -20,6 +20,7 @@ django-compressor = "*"
 rjsmin = "*"
 django-crispy-forms = "*"
 sparkpost = "*"
+django-jet = "*"
 
 [requires]
 python_version = "3.6"

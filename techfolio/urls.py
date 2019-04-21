@@ -18,7 +18,12 @@ from django.urls import path, include
 from django.conf import settings
 
 
+admin.site.site_header = 'Portfolio Admin'
+admin.site.site_title = 'Pierre-Yves Gillier'
+
+
 urlpatterns = [
+    path('jet/', include('jet.urls')),
     path('admin/', admin.site.urls),
     path('projects/', include('projects.urls')),
     path('', include('home.urls')),

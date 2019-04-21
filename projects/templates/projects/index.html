@@ -2,25 +2,15 @@
 {% load projects_extras %}
 {% block title %}Projects{% endblock %}
 {% block content %}
-    <section class="hero is-primary is-bold">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Projects
-                </h1>
-                <h2 class="subtitle">
-                    Code(s) at various states. <abbr title="you mileage may vary">ymmv</abbr>.
-                </h2>
+<div class=""
+    <section class="columns">
+        {% for project in projects_list %}
+            <div class="column">
+                <p class="title">{{ project.name }}</p>
+                <a href="{{ project.url }}">{{ project.platform|platform_icon }}/{{ project.repo_id }}</a>
+                <p>{{ project.description }}</p>
             </div>
-        </div>
-    </section>
-    <div class="tile is-ancestor">
-            {% for project in projects_list %}
-        <div class="tile is-3 box">
-            <p class="title">{{ project.name }}</p>
-            <a href="{{ project.url }}">{{ project.platform|platform_icon }}/{{ project.repo_id }}</a>
-            <p>{{ project.description }}</p>
-        </div>
         {% endfor %}
+    </section>
 </div>
 {% endblock content %}

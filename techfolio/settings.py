@@ -35,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -165,5 +166,5 @@ STATICFILES_DIRS = [
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Email
-SPARKPOST_API_KEY = os.environ['SPARKPOST_API_KEY']
+SPARKPOST_API_KEY = os.environ.get('SPARKPOST_API_KEY', None)
 EMAIL_BACKEND = 'sparkpost.django.email_backend.SparkPostEmailBackend'
