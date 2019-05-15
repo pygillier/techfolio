@@ -168,3 +168,6 @@ SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Email
 SPARKPOST_API_KEY = os.environ.get('SPARKPOST_API_KEY', None)
 EMAIL_BACKEND = 'sparkpost.django.email_backend.SparkPostEmailBackend'
+
+# Jet Admin
+JET_SIDE_MENU_COMPACT = True
