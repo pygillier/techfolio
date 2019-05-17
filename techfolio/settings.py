@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.sites',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.flatpages',
     'home.apps.HomeConfig',
     'stackoverflow.apps.StackoverflowConfig',
     'projects.apps.ProjectsConfig',
@@ -171,3 +173,5 @@ EMAIL_BACKEND = 'sparkpost.django.email_backend.SparkPostEmailBackend'
 
 # Jet Admin
 JET_SIDE_MENU_COMPACT = True
+
+SITE_ID = 1

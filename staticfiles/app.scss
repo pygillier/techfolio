@@ -15,3 +15,8 @@ $fa-font-path: "./webfonts";
 @import "./fa/solid.scss";
 @import "./fa/regular.scss";
 @import "./fa/brands.scss";
+
+/** Margin on top of content */
+nav#mainnav {
+  margin-bottom: $size-3 !important;
+}

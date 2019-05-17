@@ -25,6 +25,7 @@ admin.site.site_title = 'Pierre-Yves Gillier'
 urlpatterns = [
     path('jet/', include('jet.urls')),
     path('admin/', admin.site.urls),
+    path('site/', include('django.contrib.flatpages.urls')),
     path('projects/', include('projects.urls')),
     path('', include('home.urls')),
 ]

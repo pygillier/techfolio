@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}{{ flatpage.title }}{% endblock %}
+{% block content %}
+<article class="columns">
+    <header class="column is-one-quarter">
+        <h2 class="is-size-3">{{ flatpage.title }}</h2>
+    </header>
+    <div class="column content">
+    {{ flatpage.content }}
+    </div>
+</article>
+{% endblock content %}
