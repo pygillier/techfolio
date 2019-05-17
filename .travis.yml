@@ -2,6 +2,7 @@ language: python
 python:
   - '3.6'
 install:
+  - 'pip install pipenv'
   - 'pipenv install --dev'
 before_script:
   - mysql -e 'create database test;' -u root
