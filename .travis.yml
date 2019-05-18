@@ -4,4 +4,8 @@ python:
 install:
   - 'pip install pipenv'
   - 'pipenv install --dev'
-script: 'flake8'
+before_script:
+  - mysql -e 'create database test;' -u root
+script:
+  - 'flake8'
+  - 'python manage.py test'
