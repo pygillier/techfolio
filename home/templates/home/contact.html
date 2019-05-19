@@ -8,18 +8,24 @@
         {{ hidden }}
     {% endfor %}
     {{ form.non_field_errors }}
-    <div class="field">
-        <label for="{{ form.from_name.id_for_label }}" class="label">Your name</label>
-        <div class="control">
-            {{ form.from_name }}
+    <fieldset class="level">
+        <div class="level-left">
+            <div class="field level-item">
+                <label for="{{ form.from_name.id_for_label }}" class="label">Your name</label>
+                <div class="control">
+                    {{ form.from_name }}
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="field">
-        <label for="{{ form.from_email.id_for_label }}" class="label">Your email address</label>
-        <div class="control">
-            {{ form.from_email }}
+        <div class="level-right">
+            <div class="field">
+                <label for="{{ form.from_email.id_for_label }}" class="label">Your email address</label>
+                <div class="control">
+                    {{ form.from_email }}
+                </div>
+            </div>
         </div>
-    </div>
+    </fieldset>
     <div class="field">
         <label for="{{ form.subject.id_for_label }}" class="label">Subject</label>
         <div class="control is-expanded">
@@ -32,6 +38,11 @@
             {{ form.content }}
         </div>
     </div>
-    <input type="submit"/>
+    <button class="button is-primary"  type="submit">
+        <span class="icon">
+        <i class="far fa-paper-plane"></i>
+        </span>
+        <span>Send</span>
+    </button>
 </form>
 {% endblock payload %}
