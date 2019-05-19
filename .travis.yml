@@ -1,7 +1,15 @@
 language: python
 python:
   - '3.6'
-install:
+env:
+  global:
+    - DB_ENGINE=django.db.backends.mysql
+    - DB_NAME=techfolio
+    - DB_USER=techfolio_usr
+    - DB_PASS=techfolio_pwd
+    - DB_HOST=127.0.0.1
+    - DB_PORT=3306
+install:  
   - 'pip install pipenv'
   - 'pipenv install --dev'
 before_script:
