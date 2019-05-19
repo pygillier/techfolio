@@ -1,0 +1,18 @@
+# techfolio technical variables
+DEBUG=False
+
+## Email
+SPARKPOST_API_KEY=
+
+## Database
+DB_ENGINE=django.db.backends.mysql
+DB_NAME=techfolio
+DB_USER=username
+DB_PASS=password
+DB_HOST=127.0.0.1
+DB_PORT=3306
+
+# Development only
+DB_DATA_LOCATION=/home/example/techfolio/mysqldata
+MAILCATCHER_SMTP_PORT=1025
+MAILCATCHER_HTTP_PORT=1080

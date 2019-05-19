@@ -23,13 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0y%euo)-6v95f$@kmdjpn6_1qv(9!=(1vphtt(avn)qng6oy1%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', False)
 
 INTERNAL_IPS = [
     '127.0.0.1'
 ]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -94,12 +94,12 @@ WSGI_APPLICATION = 'techfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'techfolio',
-        'USER': 'techfolio_usr',
-        'PASSWORD': 'techfolio_pwd',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'ENGINE': os.environ['DB_ENGINE'],
+        'NAME': os.environ['DB_NAME'],
+        'USER': os.environ['DB_USER'],
+        'PASSWORD': os.environ['DB_PASS'],
+        'HOST': os.environ['DB_HOST'],
+        'PORT': os.environ['DB_PORT'],
     }
 }
 
@@ -168,8 +168,15 @@ STATICFILES_DIRS = [
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Email
-SPARKPOST_API_KEY = os.environ.get('SPARKPOST_API_KEY', None)
-EMAIL_BACKEND = 'sparkpost.django.email_backend.SparkPostEmailBackend'
+if DEBUG:
+    EMAIL_HOST = '127.0.0.1'
+    EMAIL_HOST_USER = ''
+    EMAIL_HOST_PASSWORD = ''
+    EMAIL_PORT = os.environ.get('MAILCATCHER_SMTP_PORT', 1025)
+    EMAIL_USE_TLS = False
+else:
+    SPARKPOST_API_KEY = os.environ.get('SPARKPOST_API_KEY', None)
+    EMAIL_BACKEND = 'sparkpost.django.email_backend.SparkPostEmailBackend'
 
 # Jet Admin
 JET_SIDE_MENU_COMPACT = True
