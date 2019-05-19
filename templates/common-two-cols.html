@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<article class="columns">
+    <header class="column is-one-quarter">
+        <h2 class="is-size-3">{% block subheader %}{% block title %}{% endblock title %}{% endblock subheader %}</h2>
+    </header>
+    <div class="column content">
+    {% block payload %}{% endblock payload %}
+    </div>
+</article>
+{% endblock %}
