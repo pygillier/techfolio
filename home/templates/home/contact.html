@@ -1,7 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'common-two-cols.html' %}
 {% load crispy_forms_tags %}
 {% block title %}Me contacter{% endblock %}
-{% block content %}
+{% block payload %}
 <form method="POST">
 {% csrf_token %}
     {% for hidden in form.hidden_fields %}
@@ -22,17 +22,16 @@
     </div>
     <div class="field">
         <label for="{{ form.subject.id_for_label }}" class="label">Subject</label>
-        <div class="control">
+        <div class="control is-expanded">
             {{ form.subject }}
         </div>
     </div>
     <div class="field">
-        <label for="{{ form.content.id_for_label }}" class="label">Subject</label>
+        <label for="{{ form.content.id_for_label }}" class="label">Your message</label>
         <div class="control">
             {{ form.content }}
         </div>
     </div>
     <input type="submit"/>
 </form>
-    <form>{{ form|crispy }}</form>
-{% endblock content %}
+{% endblock payload %}

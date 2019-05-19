@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  database:
+    container_name: techfolio_db
+    image: mysql:5.7.25
+    ports:
+      - "${DB_PORT}:3306"
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASS}
+      MYSQL_ROOT_PASSWORD: root_pwd
+    volumes:
+      - "${DB_DATA_LOCATION}:/var/lib/mysql"
+
+  mailcatcher:
+    container_name: techfolio_smtp
+    image: schickling/mailcatcher:latest
+    ports:
+      - "${MAILCATCHER_HTTP_PORT}:1080"
+      - "${MAILCATCHER_SMTP_PORT}:1025"
