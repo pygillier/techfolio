@@ -11,6 +11,9 @@ class IndexView(ListView):
     model = Link
     template_name = 'readings/index.html'
 
+    def get_queryset(self):
+        return Link.objects.filter(is_visible=True)
+
 
 # IFTTT webhook
 #
