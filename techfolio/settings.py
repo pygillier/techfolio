@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'stackoverflow.apps.StackoverflowConfig',
     'projects.apps.ProjectsConfig',
+    'readings.apps.ReadingsConfig',
 
     # External apps
     'constance',
@@ -114,13 +115,14 @@ CONSTANCE_CONFIG = {
     'DEBUG': (False, "Debug mode"),
     'EMAIL_DEFAULT_FROM': ('default@example.com', 'Default sender'),
     'EMAIL_DEFAULT_DEST': ('default@example.com', 'Default recipient'),
+    'INCOMING_WH_TOKEN': ('anotsosecuretoken', 'Token for incoming API requests')
 }
 
 CONSTANCE_CONFIG_FIELDSETS = {
     'GitHub': ('GITHUB_TOKEN', 'GITHUB_ONLY_USER'),
     'GitLab': ('GITLAB_TOKEN', 'GITLAB_ENDPOINT'),
     'Mailings': ('EMAIL_DEFAULT_FROM', 'EMAIL_DEFAULT_DEST'),
-    'Misc': ('DEBUG', ),
+    'Misc': ('INCOMING_WH_TOKEN', 'DEBUG'),
 }
 
 # Password validation
