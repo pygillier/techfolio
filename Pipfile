@@ -8,7 +8,7 @@ name = "pypi"
 django-debug-toolbar = "*"
 
 [packages]
-django = "==2.2"
+django = "==2.2.2"
 stackapi = "*"
 django-constance = "*"
 "github3.py" = "*"
